@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Miss You</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <style>
+        body {
+            overflow: hidden;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+        }
+        .miss-you-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+        }
+        .miss-you-text {
+            position: absolute;
+            color: #d23669;
+            font-size: 1.5rem;
+            font-weight: bold;
+            font-family: 'Dancing Script', cursive;
+            opacity: 0;
+            text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
+            animation: floatText linear infinite;
+        }
+        @keyframes floatText {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        .center-message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(210, 54, 105, 0.3);
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+    <div class="miss-you-container" id="text-container">
+        <div class="center-message pulse">
+            <h1>When We're Apart</h1>
+            <p>Every moment without you feels like an eternity</p>
+            <p>Watch as my feelings float across the screen</p>
+            <a href="index.html" class="nav-btn">Back to Poems</a>
+        </div>
+    </div>
+    
+    <script src="js/miss-you.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.getElementById('text-container');
+            const messages = [
+                "I miss you", "Thinking of you", "My heart aches", 
+                "Come back soon", "I need you", "You're my everything",
+                "Can't wait to see you", "I love you", "My days are empty",
+                "Nights are too long", "I crave your touch", "Your smile haunts me",
+                "I count the hours", "Distance hurts", "You're my missing piece"
+            ];
+            
+            function createFlyingText() {
+                const text = document.createElement('div');
+                text.classList.add('miss-you-text');
+                text.textContent = messages[Math.floor(Math.random() * messages.length)];
+                
+                // Random position and animation
+                text.style.left = `${Math.random() * 100}%`;
+                text.style.animationDuration = `${10 + Math.random() * 20}s`;
+                text.style.fontSize = `${1 + Math.random() * 2}rem`;
+                
+                container.appendChild(text);
+                
+                // Remove element after animation completes
+                setTimeout(() => {
+                    text.remove();
+                }, parseFloat(text.style.animationDuration) * 1000);
+            }
+            
+            // Create new messages every 1-3 seconds
+            setInterval(createFlyingText, 1000);
+            
+            // Initial burst of messages
+            for (let i = 0; i < 15; i++) {
+                setTimeout(createFlyingText, i * 200);
+            }
+        });
+    </script>
+</body>
+</html>

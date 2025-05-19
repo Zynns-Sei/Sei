@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Love</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@300;500&display=swap">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <style>
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: url('gifs/hearts.gif') no-repeat center center;
+            background-size: contain;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-hearts" id="hearts-container"></div>
+    
+    <header class="fade-in">
+        <h1>My Heart Belongs to You K~</h1>
+        <img src="gifs/kiss_S.gif" alt="Animated kiss" class="header-gif">
+    </header>
+    
+    <nav class="slide-up">
+        <a href="comfort.html" class="nav-btn">When You Need Comfort</a>
+        <a href="drawing.html" class="nav-btn">Draw Your Feelings</a>
+        <a href="miss-you.html" class="nav-btn">I Miss You</a>
+        <a href="lust.html" class="nav-btnx">Secret Desires</a>
+    </nav>
+    
+    <main>
+        <section class="poem-gallery">
+            <!-- Poem 1 -->
+            <article class="poem-card flip-in">
+                <div class="poem-image" style="background-image: url('images/photo1.jpg');"></div>
+                <div class="poem-text">
+                    <h2>Your Eyes</h2>
+                    <p>In your eyes I see the stars,<br>
+                    A universe that's truly ours.<br>
+                    Each glance you give, so soft, so true,<br>
+                    Lights my world - it's only you.</p>
+                </div>
+ 
+            </article>
+            
+            <!-- Poem 2 -->
+            <article class="poem-card flip-in delay-1">
+                <div class="poem-image" style="background-image: url('images/photo2.jpg');"></div>
+                <div class="poem-text">
+                    <h2>Our Song</h2>
+                    <p>Our love's a melody so sweet,<br>
+                    A rhythm made when our hearts beat.<br>
+                    No symphony could ever play,<br>
+                    The music that we make each day.</p>
+                </div>
+
+            </article>
+            
+            <!-- Add more poems as needed -->
+        </section>
+    </main>
+    
+    <footer class="float-up">
+        <p>Created with love, just for you ❤️</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Create floating hearts
+        function createHearts() {
+            const container = document.getElementById('hearts-container');
+            const heartCount = 15;
+            
+            for (let i = 0; i < heartCount; i++) {
+                const heart = document.createElement('div');
+                heart.classList.add('heart');
+                
+                // Random position
+                heart.style.left = `${Math.random() * 100}%`;
+                heart.style.top = `${Math.random() * 100}%`;
+                
+                // Random animation
+                heart.style.animation = `float ${5 + Math.random() * 10}s linear infinite`;
+                heart.style.animationDelay = `${Math.random() * 5}s`;
+                
+                container.appendChild(heart);
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', createHearts);
+    </script>
+</body>
+</html>

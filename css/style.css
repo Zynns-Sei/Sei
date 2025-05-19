@@ -1,0 +1,152 @@
+/* Base Styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #fff0f5 0%, #fff9fb 100%);
+    color: #333;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.comfort-bg {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+header {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+h1, h2 {
+    font-family: 'Dancing Script', cursive;
+    color: #d23669;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    flex-wrap: wrap;
+}
+
+.nav-btn {
+    background: #ff69b4;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+}
+
+.nav-btnx {
+    background: #ff2861;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+}
+
+.nav-btn:hover {
+    background: #ff1493;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 20, 147, 0.4);
+}
+
+.nav-btnx:hover {
+    background: #ff1493;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 20, 147, 0.4);
+}
+
+/* Poem Cards */
+.poem-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.poem-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.2);
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+.poem-card:hover {
+    transform: translateY(-5px);
+}
+
+.poem-image {
+    flex: 1;
+    min-height: 250px;
+    background-size: cover;
+    background-position: center;
+}
+
+.poem-text {
+    flex: 1;
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.poem-text h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.poem-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.poem-gif {
+    position: absolute;
+    width: 80px;
+    bottom: 20px;
+    right: 20px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: #d23669;
+    font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .poem-card {
+        flex-direction: column;
+    }
+    
+    .poem-image {
+        min-height: 200px;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+}
