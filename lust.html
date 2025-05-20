@@ -163,7 +163,7 @@
     </style>
 </head>
 <body>
-    <!-- Password Protection
+<!--     Password Protection -->
     <div id="password-overlay">
         <div id="password-form">
             <h2>Enter Secret Code</h2>
@@ -171,7 +171,7 @@
             <button onclick="checkPassword()">Unlock Desires</button>
             <p id="password-error" style="color:#ff6b9e; display:none;">Incorrect, try again...</p>
         </div>
-    </div> -->
+    </div>
 
     <!-- Floating Background Elements -->
     <div class="floating-kisses" id="kisses-container"></div>
@@ -231,15 +231,15 @@
 
     <script>
         // Password Protection
-        // const CORRECT_PASSWORD = "1"; // Change this to your secret word
-        // function checkPassword() {
-        //     const input = document.getElementById('password-input').value;
-        //     if(input.toLowerCase() === CORRECT_PASSWORD) {
-        //         document.getElementById('password-overlay').style.display = 'none';
-        //     } else {
-        //         document.getElementById('password-error').style.display = 'block';
-        //     }
-        // }
+        const CORRECT_PASSWORD = "only"; // Change this to your secret word
+        function checkPassword() {
+            const input = document.getElementById('password-input').value;
+            if(input.toLowerCase() === CORRECT_PASSWORD) {
+                document.getElementById('password-overlay').style.display = 'none';
+            } else {
+                document.getElementById('password-error').style.display = 'block';
+            }
+        }
 
         // Create floating kiss animations
         function createKisses() {
